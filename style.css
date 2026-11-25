@@ -104,6 +104,8 @@ body {
   justify-content: center;
   align-items: center;
   transition: opacity 1.4s ease;
+  width: 100%;
+  overflow: hidden;
 }
 
 #figure img {
@@ -117,6 +119,7 @@ body {
   transform-origin: 50% 0;
   /* hojdá sa od horného okraja */
   animation: sway 6s ease-in-out infinite;
+  object-fit: contain;
 }
 
 /* vyblednutie po kliknutí (trieda "leaving" pridáva script.js) */
