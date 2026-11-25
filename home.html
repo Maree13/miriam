@@ -13,6 +13,9 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script src="script.js" defer></script>
+
+
   <title>Document</title>
 </head>
 <body class="body home-page">
@@ -28,10 +31,14 @@
     <nav class="nav" id="navbar">
       <ul class="nav-list">
         <li>
-          <a href="#aboutme">About Me</a>
+          <a href="#intro">Intro</a>
         </li>
         <li>
           <a href="#art">Art</a>
+        </li>
+        <li>
+          <a href="#aboutme">About Me</a>
+        </li>
         <li>
           <a href="#contact">Contact</a>
         </li>
@@ -39,15 +46,20 @@
     </nav>
   </header> 
 
-  <main>
-    <section class="about" id="aboutme">
-      <img class="about-photo" src="img/miriam.jpg" alt="Miriam">
-      <div class="about-text">
-        <h2 class="section-title">About Me</h2>
-        <p>Ahoj, som Miriam a vyrábam ručne maľované vianočné ozdoby.</p>
-        <p>Sem môžeš napísať viac o tom, ako si začala a čo ťa inšpiruje.</p>
-      </div>
+  <main>    
+    <section class="intro" id="intro">
+    <div class="intro-container">
+      <div class="intro-content">
+        <h2 class="section-title">Intro</h2>
+        <!-- <img class="about-photo" src="img/miriam.jpg" alt="Miriam"> -->
+        <div class="intro-text">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, eum? Amet exercitationem ratione nisi, necessitatibus magnam placeat maiores vero libero, molestiae labore aspernatur sit reiciendis?.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem earum possimus ipsam ducimus tempore, ut rem quos qui debitis a..</p>
+        </div>
+      </div>   
+      <img class="intro-illustration" src="img/kresbaAI.png" alt="kresba figurky"> </div> 
     </section>
+    
   
     <section class="gallery" id="art">
       <h2 class="section-title">Art</h2>
@@ -56,9 +68,23 @@
         <img src="img/ozdoba-2.jpg" alt="Ozdoba 2">
         <img src="img/ozdoba-3.jpg" alt="Ozdoba 3">
         <img src="img/ozdoba-4.jpg" alt="Ozdoba 4">
-        <img src="img/ozdoba-5.jpg" alt="Ozdoba 5">
-        <img src="img/ozdoba-6.jpg" alt="Ozdoba 6">
+        <!-- <img src="img/ozdoba-5.jpg" alt="Ozdoba 5">
+        <img src="img/ozdoba-6.jpg" alt="Ozdoba 6"> -->
       </div>
+    </section>
+
+    <section class="about" id="aboutme">
+ 
+      <h2 class="section-title">About Me</h2>
+  
+    
+      <div class="about-content">
+        <!-- <img class="about-photo" src="img/miriam.jpg" alt="Miriam"> -->
+        <div class="about-text">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, eum? Amet exercitationem ratione nisi, necessitatibus magnam placeat maiores vero libero, molestiae labore aspernatur sit reiciendis?.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem earum possimus ipsam ducimus tempore, ut rem quos qui debitis a..</p>
+        </div>
+      </div>     
     </section>
   
     <section class="contact" id="contact">
