@@ -33,6 +33,10 @@ body {
   background: var(--color-bg);
 }
 
+p {
+  line-height: 1.9;
+}
+
 
 /* ---------- 3. MENU ---------- */
 .header {
@@ -253,10 +257,11 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 4rem;
 }
 
 .art-text {
-  max-width: 75%;
+  /* max-width: 75%; */
 }
 
 .art-illustration {
