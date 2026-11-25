@@ -9,11 +9,8 @@
 /* ---------- 1. PREMENNÉ ---------- */
 :root {
   --color-text: #2b2b2b;
-  /* svetlejšia čierna */
   --color-bg: whitesmoke;
-  /* surový papier */
   --color-accent: #c8372d;
-  /* červená z figúrky, farba pri prechode myšou */
 
   --font-body: "JetBrains Mono", monospace;
   --font-title: "Amatic SC", cursive;
@@ -23,7 +20,6 @@
 /* ---------- 2. ZÁKLAD ---------- */
 html {
   scroll-behavior: smooth;
-  /* plynulé posúvanie na sekcie z menu */
 }
 
 body {
@@ -48,11 +44,9 @@ p {
   justify-content: center;
 }
 
-
 .home-link {
   position: absolute;
   left: 2rem;
-  /* Zarovnanie s ľavým odsadením headera */
   display: flex;
   align-items: center;
   transition: transform 0.2s, opacity 0.2s;
@@ -60,23 +54,34 @@ p {
 
 .home-link img {
   width: 32px;
-  /* Uprav si veľkosť podľa potreby */
   height: auto;
   display: block;
 }
 
-/* Jemný efekt pri prejdení myšou */
 .home-link:hover {
   transform: scale(1.1);
   opacity: 0.8;
 }
 
+/* Hamburger tlačidlo – na počítači je skryté */
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-icon img {
+  width: 32px;
+  height: auto;
+  display: block;
+}
+
 .nav-list {
   display: flex;
   justify-content: center;
-  /* spojí položky na stred */
   gap: 3.5rem;
-  /* rovnaká, príjemná medzera medzi slovami */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -84,9 +89,7 @@ p {
 
 .nav-list a {
   color: var(--color-text);
-  /* nie fialová */
   text-decoration: none;
-  /* bez podčiarknutia */
   font-size: 1.2rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -95,16 +98,6 @@ p {
 
 .nav-list a:hover {
   color: var(--color-accent);
-}
-
-/* ----------- ICONS --------------- */
-
-.arrow-up {
-  width: 32px;
-  /* Uprav si veľkosť podľa potreby */
-  height: auto;
-  display: block;
-  margin: 40px;
 }
 
 
@@ -132,19 +125,14 @@ p {
   text-align: center;
   margin: 0;
   flex-shrink: 0;
-  /* Nadpis sa nikdy nezmenší */
 }
 
-/* Odkaz obalujúci figúrku aj šípku */
 #figure.intro-page_container {
   flex: 1;
-  /* Zaberie zvyšok obrazovky pod nadpisom */
   min-height: 0;
-  /* Kľúčové: dovolí prvku zmenšiť sa na výšku okna */
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* Uloží figúrku a šípku POD SEBA */
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -152,12 +140,9 @@ p {
   transition: opacity 1.4s ease;
 }
 
-/* Obal pre samotnú figúrku */
 .intro-page_figurka {
   flex: 1;
-  /* Figúrka zaberie dostupný priestor nad šípkou */
   min-height: 0;
-  /* Kľúčové: obrázok sa zmenší podľa výšky displeja */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -168,7 +153,6 @@ p {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  /* Nikdy nepretečie z kontajnera */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -176,15 +160,14 @@ p {
   animation: sway 6s ease-in-out infinite;
 }
 
-/* Obal pre šípku dole */
 .arrow-up {
   flex-shrink: 0;
-  /* Šípka ostane vždy viditeľná v plnej veľkosti */
   width: 32px;
   height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px;
 }
 
 .arrow-up_img {
@@ -193,7 +176,6 @@ p {
   display: block;
 }
 
-/* vyblednutie po kliknutí */
 .intro-page.leaving #figure {
   opacity: 0;
 }
@@ -213,7 +195,6 @@ p {
 
 /* ---------- 5. HLAVNÁ STRÁNKA (home.html) ---------- */
 
-/* jemné vynorenie po načítaní */
 .home-page {
   animation: fadeIn 2.5s ease both;
 }
@@ -235,21 +216,12 @@ p {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  /* vycentruje obsah */
   padding: 0 1.5rem;
 }
 
 section {
   padding: 4rem 0;
 }
-
-/* .section-title {
-  font-family: var(--font-title);
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0 0 2rem;
-} */
 
 /* ---- ART ---- */
 
@@ -261,14 +233,11 @@ section {
   gap: 4rem;
 }
 
-.art-text {
-  /* max-width: 75%; */
-}
-
 .art-illustration {
   transform-origin: 50% 0;
   cursor: pointer;
   max-width: 430px;
+  width: 100%;
 }
 
 .art-illustration.swinging {
@@ -301,12 +270,7 @@ section {
   }
 }
 
-
-
-
-
-
-/* --- Popisky sekcií Gallery a Contact (v štýle menu) --- */
+/* --- Popisky sekcií Gallery a Contact --- */
 .gallery,
 .contact {
   padding: 3rem 0;
@@ -323,11 +287,7 @@ section {
   margin: 0 0 1.5rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
-  /* border-bottom: 1px solid var(--color-text); */
-  /* tenká linka pod popiskom */
-  /* TOTO ZACHOVAT */
 }
-
 
 /* --- Galéria --- */
 .gallery-grid {
@@ -348,18 +308,12 @@ section {
   opacity: 0.8;
 }
 
-/* --- O autorke: fotka vľavo, text vpravo --- */
+/* --- O autorke --- */
 .about {
   min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
-  /* toto uloží nadpis a text POD SEBA namiesto vedľa seba */
   justify-content: center;
-  /* vycentruje celý blok na výšku obrazovky rovnako ako Intro */
-  /* max-width: 600px; */
-  /* prispôsobte šírke, akú má vaše Intro */
-  /* margin: 0 auto; */
-  /* vycentruje blok na stred stránky */
   padding: 2rem 0;
 }
 
@@ -367,42 +321,15 @@ section {
   text-align: left;
 }
 
-
 .about-photo {
   display: block;
   flex: 0 1 auto;
-  width: auto;
-  height: auto;
   width: 100%;
   max-width: 340px;
   min-width: 0;
   padding: 12px;
-  /* vytvorí čistý biely okraj okolo fotky */
-  /* background: #ffffff; */
-  /* farba pasparty */
   border: 1px solid #e0e0e0;
-  /* veľmi jemná linka, ktorá ladí s webom */
 }
-
-
-
-/* malá červená linka pod nadpisom */
-/* .about-text .section-title::after {
-  content: "";
-  display: block;
-  width: 3rem;
-  height: 2px;
-  background: var(--color-accent);
-  margin-top: 1rem;
-} */
-
-/* .about-text p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-} */
-
-
-
 
 /* --- Kontakt --- */
 .contact p {
@@ -426,13 +353,82 @@ section {
 
 /* ---------- MOBIL ---------- */
 @media (max-width: 700px) {
-  .header {
-    padding: 1rem;
+  body {
+    padding: 0;
+    /* Odstráni veľký bočný okraj na mobile */
   }
 
-  .nav-list {
-    gap: 1.25rem;
+  .header {
+    /* padding: 1.2rem 1.5rem; */
+    /* position: sticky;
+    top: 0; */
+    justify-content: flex-end;
+    /* Hamburger ikona pôjde doprava */
   }
+
+  .home-link {
+    left: 1.5rem;
+    z-index: 1003;
+    /* Zostane viditeľná nad otvoreným menu, rovnako ako ikona vpravo */
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 1003;
+    outline: none;
+    /* Odstráni modrý rámik po kliknutí */
+  }
+
+
+  /* Rozbaľovacie mobilné menu */
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100dvh;
+    /* Presná výška viditeľného displeja */
+    max-height: 100vh;
+    background: var(--color-bg);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-list a {
+    font-size: 1.5rem;
+  }
+
+  /* Sekcia ART na mobile pod sebou */
+  section {
+    padding: 2rem 0;
+  }
+
+  .art-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .art-illustration {
+    display: none;
+  }
+
+
 
   .about {
     flex-direction: column;
@@ -440,18 +436,13 @@ section {
     gap: 1.5rem;
   }
 
-  /* .about-photo {
-    max-width: 100%;
-    max-height: 60vh;
-  } */
-
   .about-text {
     flex: 0 1 auto;
   }
 }
 
 
-/* ---------- MENEJ POHYBU (ak má človek vypnuté animácie) ---------- */
+/* ---------- MENEJ POHYBU ---------- */
 @media (prefers-reduced-motion: reduce) {
 
   *,
