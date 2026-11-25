@@ -15,7 +15,7 @@ window.addEventListener('pageshow', () => {
   document.body.classList.remove('leaving');
 });
 
-const ornament = document.querySelector('.intro-illustration');
+const ornament = document.querySelector('.art-illustration');
 
 if (ornament) {
   ornament.addEventListener('mouseenter', () => {

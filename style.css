@@ -55,7 +55,7 @@ body {
   /* nie fialová */
   text-decoration: none;
   /* bez podčiarknutia */
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -171,25 +171,26 @@ section {
   margin: 0 0 2rem;
 } */
 
-/* ---- INTRO ---- */
+/* ---- ART ---- */
 
-.intro-container {
+.art-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.intro-text {
+.art-text {
   max-width: 75%;
 }
 
-.intro-illustration {
+.art-illustration {
   transform-origin: 50% 0;
   cursor: pointer;
+  max-width: 430px;
 }
 
-.intro-illustration.swinging {
+.art-illustration.swinging {
   animation: ornamentTouch 1.8s ease-in-out;
 }
 
@@ -224,7 +225,7 @@ section {
 
 
 
-/* --- Popisky sekcií Art a Contact (v štýle menu) --- */
+/* --- Popisky sekcií Gallery a Contact (v štýle menu) --- */
 .gallery,
 .contact {
   padding: 3rem 0;
@@ -234,12 +235,13 @@ section {
 .section-title,
 .contact {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.15em;
   text-align: left;
   margin: 0 0 1.5rem;
   padding-bottom: 1rem;
+  text-transform: uppercase;
   /* border-bottom: 1px solid var(--color-text); */
   /* tenká linka pod popiskom */
   /* TOTO ZACHOVAT */
