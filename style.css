@@ -36,7 +36,34 @@ body {
 
 /* ---------- 3. MENU ---------- */
 .header {
+  position: relative;
+  /* Dôležité: slúži ako záchytný bod pre ikonu vľavo */
   padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link {
+  position: absolute;
+  left: 2rem;
+  /* Zarovnanie s ľavým odsadením headera */
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.home-link img {
+  width: 32px;
+  /* Uprav si veľkosť podľa potreby */
+  height: auto;
+  display: block;
+}
+
+/* Jemný efekt pri prejdení myšou */
+.home-link:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .nav-list {
