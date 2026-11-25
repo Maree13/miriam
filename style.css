@@ -92,21 +92,27 @@ body {
   color: var(--color-accent);
 }
 
+/* ----------- ICONS --------------- */
+
+.arrow-up {
+  width: 32px;
+  /* Uprav si veľkosť podľa potreby */
+  height: auto;
+  display: block;
+}
+
 
 /* ---------- 4. ÚVODNÁ STRÁNKA (index.html) ---------- */
 
 .intro-page {
   height: 100vh;
   height: 100dvh;
-  /* presná výška obrazovky (nie min-height) */
   box-sizing: border-box;
   padding: 1.5rem;
   overflow: hidden;
-  /* úvod sa nescrolluje */
   display: flex;
   flex-direction: column;
-  /* nadpis nad figúrkou */
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   transition: opacity 1.4s ease;
@@ -119,37 +125,69 @@ body {
   letter-spacing: 0.15em;
   text-align: center;
   margin: 0;
-  /* medzeru robí gap v .intro-page */
+  flex-shrink: 0;
+  /* Nadpis sa nikdy nezmenší */
 }
 
-#figure {
+/* Odkaz obalujúci figúrku aj šípku */
+#figure.intro-page_container {
   flex: 1;
-  /* zaberie všetok voľný priestor pod nadpisom */
+  /* Zaberie zvyšok obrazovky pod nadpisom */
   min-height: 0;
-  /* dovolí sa zmenšiť pod veľkosť obrázka */
+  /* Kľúčové: dovolí prvku zmenšiť sa na výšku okna */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Uloží figúrku a šípku POD SEBA */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: opacity 1.4s ease;
+}
+
+/* Obal pre samotnú figúrku */
+.intro-page_figurka {
+  flex: 1;
+  /* Figúrka zaberie dostupný priestor nad šípkou */
+  min-height: 0;
+  /* Kľúčové: obrázok sa zmenší podľa výšky displeja */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 1.4s ease;
-  width: 100%;
-  overflow: hidden;
 }
 
-#figure img {
+.intro-page_figurka img {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  /* nikdy nepresiahne dostupný priestor */
+  /* Nikdy nepretečie z kontajnera */
   width: auto;
   height: auto;
-  /* pomer strán ostáva, bez deformácie */
-  transform-origin: 50% 0;
-  /* hojdá sa od horného okraja */
-  animation: sway 6s ease-in-out infinite;
   object-fit: contain;
+  transform-origin: 50% 0;
+  animation: sway 6s ease-in-out infinite;
 }
 
-/* vyblednutie po kliknutí (trieda "leaving" pridáva script.js) */
+/* Obal pre šípku dole */
+.arrow-up {
+  flex-shrink: 0;
+  /* Šípka ostane vždy viditeľná v plnej veľkosti */
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-up_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* vyblednutie po kliknutí */
 .intro-page.leaving #figure {
   opacity: 0;
 }
